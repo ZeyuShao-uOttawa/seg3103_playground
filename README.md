@@ -1,31 +1,17 @@
-## Synopsis
+## Java
+For the java class, I ran it by `cd`ing into the `src` directory and compiling the file Main.java by running `javac Main.java` and then running it by `java Main`
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+## JUnit
+For the junit test, I ran it by `cd`ing into the `test` directory, copying over the JUnit jar into the `test` directory, and then compiling the test using `javac -cp .;junit-platform-console-standalone-1.7.1.jar;../src NewmathTest.java`, and lastly running the test using `java -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\newmath_java\test --scan-class-path`. Side note I had to move the Newmath class file into the test directory since it could not find it (I probably could have changed the code to import it)
 
-## Code Example
+## Elixir
+To run Newmath in Elixir, I first ran `mix compile` in the `newmath_ex` directory to compile the Elixir files and then I ran `iex -S mix` to run Newmath in Elixir shell
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+## EXUnit
+To run the Elixir Test I ran `mix test %*` in the `newmath_ex` directory
 
-## Motivation
+## Python Run
+To run Newmath in Python I first ran `python -i ./bin/run.py` in the `newmath_py` directory to enter the Python shell where I could use the newmath function
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
-
-## Installation
-
-Provide code examples and explanations of how to get the project.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+## PYUnit
+To run the Python test I ran `python -m unittest discover -s test` in the `newmath_py` directory
