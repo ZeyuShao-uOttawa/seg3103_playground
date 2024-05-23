@@ -11,3 +11,5 @@ java --add-opens java.base/java.lang=ALL-UNNAMED -jar user-registration-app-0.1.
 | [ZabuZabuZabuZabu, Zeyu@, Shao@, Zeyu, 21, Ottawa, K1JHHH] | Error (UserName, FirstName, LastName, Email, PostalCode) | Error (UserName, FirstName, LastName, Email, PostalCode) | Pass |
 | [YOLO, , , 25, 21, Ottawa, HHH7G2] | Error (UserName, Email, PostalCode) | Error (UserName, Email, PostalCode) | Pass |
 
+## Running BitTest and BitAndTest
+To run the tests I compiled the two java files using `javac -cp .;junit-platform-console-standalone-1.7.1.jar;../src bitTest.java` and `javac -cp .;junit-platform-console-standalone-1.7.1.jar;../src bitAndTest.java`. Then to run the tests I ran the command `java -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\lab2\ecs/test --scan-class-path`. ![image](https://github.com/ZeyuShao-uOttawa/seg3103_playground/assets/33436865/639ff8ae-9dd1-44d8-a011-6a980eb89c9b)
