@@ -16,6 +16,7 @@ To run the tests I compiled the two java files using `javac -cp .;junit-platform
 
 ## Running DateTest, DateNextDateOktTest, and DateNextDateExceptionTest
 To compile the tests I ran `javac -cp .;junit-platform-console-standalone-1.7.1.jar;../src DateTest.java DateNextDateExceptionTest.java DateNextDateOkTest.java` and to run the tests I ran `java -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\lab2\ecs/test --scan-class-path`
+
 ![image](https://github.com/ZeyuShao-uOttawa/seg3103_playground/assets/33436865/55c29ead-e2c9-4498-a6ad-7ed35352a691)
 
 
