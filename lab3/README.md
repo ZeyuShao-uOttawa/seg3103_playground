@@ -1,12 +1,13 @@
-## Compiling JUnit Test File
+## Running Jacoco Report
+### Compiling JUnit Test File
 `javac -cp .;junit-platform-console-standalone-1.7.1.jar;../src ComputationTest.java`
-## Running JUnit Test on Computation
+### Running JUnit Test on Computation
 `java -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\lab3\computation\test --scan-class-path`
-## Creating Jacoco.exec File
+### Creating Jacoco.exec File
 `java -javaagent:jacocoagent.jar -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\lab3\computation\test --scan-class-path`
-## Creating Jacoco Report
+### Creating Jacoco Report
 `java -jar jacococli.jar report jacoco.exec --classfiles C:\Users\zeyus\Documents\seg3103_playground\lab3\computation\test\Classfiles --sourcefiles C:\Users\zeyus\Documents\seg3103_playground\lab3\computation\test --html report`
-## Jacoco Report
+### Jacoco Report
 ![image](https://github.com/ZeyuShao-uOttawa/seg3103_playground/assets/33436865/4979f9d8-9f2d-45c1-8042-e1c0f6795e0b)
 ## Statement and Branch Coverage
 For the date class, covering all of the statements covers all of the branches
@@ -45,5 +46,15 @@ For the date class, covering all of the conditions covers all of the branch/cond
 | 12 | nextDate | (1, 6, 2000) | (2, 7, 2000) |
 | 12 | nextDate | (1, 9, 2001) | (2, 10, 2001) |
 | 13 | equals | (30, 12, 2000) (30, 12, 2000) | true |
+| 13 | equals | (30, 12, 2000) (1, 10, 1000) | false |
 | 14 | equals | "hello" | false |
 | 15 | toString | (30, 12, 2000) | "2000/December/30" |
+## Running Jacoco Report for DateTest
+### Compiling JUnit Test File
+`javac -cp .;junit-platform-console-standalone-1.7.1.jar;../src DateTest.java`
+### Running JUnit Test on Computation
+`java -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\lab3\date\test --scan-class-path`
+### Creating Jacoco.exec File
+`java -javaagent:jacocoagent.jar -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\lab3\date\test --scan-class-path`
+### Creating Jacoco Report
+`java -jar jacococli.jar report jacoco.exec --classfiles C:\Users\zeyus\Documents\seg3103_playground\lab3\date\test\Classfiles --sourcefiles C:\Users\zeyus\Documents\seg3103_playground\lab3\date\test --html report`
