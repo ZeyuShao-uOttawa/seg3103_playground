@@ -58,3 +58,9 @@ For the date class, covering all of the conditions covers all of the branch/cond
 `java -javaagent:jacocoagent.jar -jar junit-platform-console-standalone-1.7.1.jar --class-path C:\Users\zeyus\Documents\seg3103_playground\lab3\date\test --scan-class-path`
 ### Creating Jacoco Report
 `java -jar jacococli.jar report jacoco.exec --classfiles C:\Users\zeyus\Documents\seg3103_playground\lab3\date\test\Classfiles --sourcefiles C:\Users\zeyus\Documents\seg3103_playground\lab3\date\test --html report`
+### Inital Result
+![image](https://github.com/ZeyuShao-uOttawa/seg3103_playground/assets/33436865/c42aba87-23b3-42f2-980d-942f3327a78e)
+### Final Result
+![image](https://github.com/ZeyuShao-uOttawa/seg3103_playground/assets/33436865/ca4b7f9e-1e71-4706-9be4-139c202b0d50)
+### Conclusion
+100% coverage is not possible due to not being able to test if it is not a leap year and the month is 2 but the day is 29. But it is very close to 100%
