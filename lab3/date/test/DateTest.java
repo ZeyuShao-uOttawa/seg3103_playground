@@ -149,4 +149,83 @@ class DateTest {
     );
   }
 
+  @Test
+  void nextDate_invalid_tc21() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(1975, 6, 32)
+    );
+  }
+
+  @Test
+  void nextDate_invalid_tc22() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(1975, 4, 31)
+    );
+  }
+
+  @Test
+  void nextDate_invalid_tc23() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2000, 2, 30)
+    );
+  }
+
+  @Test
+  void nextDate_invalid_tc24() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2000, 0, 30)
+    );
+  }
+
+  @Test
+  void nextDate_tc25() {
+    Date today = new Date(2023, 2, 28);
+    Date expectedTomorrow = new Date(2023, 3, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+
+  @Test
+  void nextDate_tc26() {
+    Date today = new Date(2000, 2, 29);
+    assertEquals("2000/February/29", today.toString());
+  }
+
+  @Test
+  void nextDate_tc27() {
+    Date first = new Date(2000, 1, 29);
+    Date second = new Date(2000, 1, 29);
+    assertEquals(true, first.equals(second));
+  }
+
+  @Test
+  void nextDate_tc28() {
+    Date first = new Date(2001, 2, 28);
+    Date second = new Date(1000, 1, 1);
+    assertEquals(false, first.equals(second));
+  }
+
+  @Test
+  void nextDate_tc29() {
+    Date first = new Date(2001, 2, 2);
+    Date second = new Date(2001, 1, 2);
+    assertEquals(false, first.equals(second));
+  }
+
+  @Test
+  void nextDate_tc30() {
+    Date first = new Date(2001, 1, 28);
+    Date second = new Date(2001, 1, 1);
+    assertEquals(false, first.equals(second));
+  }
+
+  @Test
+  void nextDate_tc31() {
+    Date first = new Date(2000, 9, 29);
+    String second = "hello";
+    assertEquals(false, first.equals(second));
+  }
 }
