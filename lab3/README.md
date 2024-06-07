@@ -64,3 +64,5 @@ For the date class, covering all of the conditions covers all of the branch/cond
 ![image](https://github.com/ZeyuShao-uOttawa/seg3103_playground/assets/33436865/ca4b7f9e-1e71-4706-9be4-139c202b0d50)
 ### Conclusion
 100% coverage is not possible due to not being able to test if it is not a leap year and the month is 2 but the day is 29. But it is very close to 100%
+## Refactoring
+After refactoring, the legibility of overall code was improved and the coverage improved by 1 extra coverage, since before the test case that was needed but not runnable had covered two branches, but after refactoring it only covered one so theres only one branch missing.
