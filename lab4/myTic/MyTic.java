@@ -39,8 +39,4 @@ public class MyTic {
             return;
         }
     }
-
-    public static void main() {
-
-    }
 }
