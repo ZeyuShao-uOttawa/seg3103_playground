@@ -9,8 +9,8 @@ public class MyTicTest {
         
         game.startGame();
 
-        assertEquals(game.board.length, 3);
-        assertEquals(game.board[0].length, 3);
+        assertEquals(3, game.board.length);
+        assertEquals(3, game.board[0].length);
     }
 
     @Test 
@@ -24,7 +24,7 @@ public class MyTicTest {
         game.turn('x', loc);
         
 
-        assertArrayEquals(game.board, expectedBoard);
+        assertArrayEquals(expectedBoard, game.board);
     }
 
     @Test 
@@ -105,6 +105,6 @@ public class MyTicTest {
         game.turn('o', new int[]{0, 1});
         game.turn('x', new int[]{2, 0});
 
-        assertEquals(game.gameEnd(), true);
+        assertEquals(true, game.gameEnd);
     }
 }
