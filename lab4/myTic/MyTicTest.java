@@ -8,7 +8,7 @@ public class MyTicTest {
         MyTic game = new MyTic();
         game.startGame();
 
-        assertEquals(game.board.length(), 3);
-        assertEquals(game.board.length(), 3);
+        assertEquals(game.board.length, 3);
+        assertEquals(game.board[0].length, 3);
     }
 }
