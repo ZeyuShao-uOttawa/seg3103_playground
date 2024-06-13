@@ -9,6 +9,9 @@ public class MyTic {
     }
 
     public void turn(char value, int[] location){
+        if (this.board[location[0]][location[1]] != '\u0000') {
+            throw new IllegalArgumentException("Inputted value in slot that is already filled");
+        }
         this.board[location[0]][location[1]] = value;
     }
 
