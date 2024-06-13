@@ -9,6 +9,9 @@ public class MyTic {
     }
 
     public void turn(char value, int[] location){
+        if (location[0] <= -1 || location[0] >= 3 || location[1] <= -1 || location[1] >= 3) {
+            throw new IllegalArgumentException("Location out of bound");
+        }
         if (this.board[location[0]][location[1]] != '\u0000') {
             throw new IllegalArgumentException("Inputted value in slot that is already filled");
         }
