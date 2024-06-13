@@ -6,7 +6,6 @@ public class MyTic {
 
     public void startGame(){
         this.board = new char[gridHeight][gridWidth];
-        
     }
 
     public static void main(){
