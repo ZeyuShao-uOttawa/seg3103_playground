@@ -92,4 +92,19 @@ public class MyTicTest {
             game.turn('x', loc);
         });
     }
+
+    @Test 
+    void gameEndTest1() {
+        MyTic game = new MyTic();
+        char[][] expectedBoard = new char[3][3];
+        
+        game.startGame();
+        game.turn('x', new int[]{1, 1});
+        game.turn('o', new int[]{0, 0});
+        game.turn('x', new int[]{0, 2});
+        game.turn('o', new int[]{0, 1});
+        game.turn('x', new int[]{2, 0});
+
+        assertEquals(game.gameEnd(), true);
+    }
 }
