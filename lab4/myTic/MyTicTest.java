@@ -17,13 +17,27 @@ public class MyTicTest {
     void firstTurnTest() {
         MyTic game = new MyTic();
         char[][] expectedBoard = new char[3][3];
+        expectedBoard[0][1] = 'x';
         int[] loc = {0,1};
         
-        expectedBoard[0][1] = 'x';
         game.startGame();
         game.turn('x', loc);
         
 
         assertArrayEquals(game.board, expectedBoard);
+    }
+
+    @Test 
+    void subsequentTurnTest() {
+        MyTic game = new MyTic();
+        char[][] expectedBoard = new char[3][3];
+        int[] loc = {0,1};
+        
+        game.startGame();
+        game.turn('x', loc);
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.turn('o', loc);
+        });
     }
 }
