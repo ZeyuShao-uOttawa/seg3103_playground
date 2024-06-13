@@ -14,18 +14,16 @@ public class MyTicTest {
     }
 
     @Test 
-    void turnTest() {
+    void firstTurnTest() {
         MyTic game = new MyTic();
-        char[][] expectedBoard = {
-            {' ', 'x', ' '},
-            {' ', ' ', ' '},
-            {' ', ' ', ' '}
-        };
+        char[][] expectedBoard = new char[3][3];
+        int[] loc = {0,1};
         
+        expectedBoard[0][1] = 'x';
         game.startGame();
-        game.turn('x', {0,1});
+        game.turn('x', loc);
         
 
-        assertEquals(game.board, expectedBoard);
+        assertArrayEquals(game.board, expectedBoard);
     }
 }

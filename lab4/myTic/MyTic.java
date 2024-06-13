@@ -8,6 +8,10 @@ public class MyTic {
         this.board = new char[gridHeight][gridWidth];
     }
 
+    public void turn(char value, int[] location){
+        this.board[location[0]][location[1]] = value;
+    }
+
     public static void main(){
 
     }
