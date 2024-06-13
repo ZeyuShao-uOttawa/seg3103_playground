@@ -40,4 +40,56 @@ public class MyTicTest {
             game.turn('o', loc);
         });
     }
+
+    @Test 
+    void invalidLocationTest1() {
+        MyTic game = new MyTic();
+        char[][] expectedBoard = new char[3][3];
+        int[] loc = {3,1};
+        
+        game.startGame();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.turn('x', loc);
+        });
+    }
+
+    @Test 
+    void invalidLocationTest2() {
+        MyTic game = new MyTic();
+        char[][] expectedBoard = new char[3][3];
+        int[] loc = {1,3};
+        
+        game.startGame();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.turn('x', loc);
+        });
+    }
+
+    @Test 
+    void invalidLocationTest3() {
+        MyTic game = new MyTic();
+        char[][] expectedBoard = new char[3][3];
+        int[] loc = {-1,1};
+        
+        game.startGame();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.turn('x', loc);
+        });
+    }
+
+    @Test 
+    void invalidLocationTest4() {
+        MyTic game = new MyTic();
+        char[][] expectedBoard = new char[3][3];
+        int[] loc = {1,-1};
+        
+        game.startGame();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            game.turn('x', loc);
+        });
+    }
 }
