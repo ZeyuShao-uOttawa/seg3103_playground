@@ -2,12 +2,7 @@ defmodule Grades.Calculator do
   def percentage_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
     avg_homework = avg(homework)
 
-    avg_labs =
-      if Enum.count(labs) == 0 do
-        0
-      else
-        Enum.sum(labs) / Enum.count(labs)
-      end
+    avg_labs = lab_avg(labs)
 
     mark = calculate_grade(avg_homework, avg_exams, num_labs)
     round(mark * 100)
@@ -16,19 +11,11 @@ defmodule Grades.Calculator do
   def letter_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
     avg_homework = avg(homework)
 
-    avg_labs =
-      if Enum.count(labs) == 0 do
-        0
-      else
-        Enum.sum(labs) / Enum.count(labs)
-      end
+    avg_labs = lab_avg(labs)
 
     avg_exams = (midterm + final) / 2
 
-    num_labs =
-      labs
-      |> Enum.reject(fn mark -> mark < 0.25 end)
-      |> Enum.count()
+    num_labs = lab_count(labs)
 
     if failed_to_participate?(avg_homework, avg_exams, num_labs) do
       "EIN"
@@ -54,19 +41,11 @@ defmodule Grades.Calculator do
   def numeric_grade(%{homework: homework, labs: labs, midterm: midterm, final: final}) do
     avg_homework = avg(homework)
 
-    avg_labs =
-      if Enum.count(labs) == 0 do
-        0
-      else
-        Enum.sum(labs) / Enum.count(labs)
-      end
+    avg_labs = lab_avg(labs)
 
     avg_exams = (midterm + final) / 2
 
-    num_labs =
-      labs
-      |> Enum.reject(fn mark -> mark < 0.25 end)
-      |> Enum.count()
+    num_labs = lab_count(labs)
 
     if failed_to_participate?(avg_homework, avg_exams, num_labs) do
       0
@@ -103,5 +82,19 @@ defmodule Grades.Calculator do
 
   def calculate_grade(avg_homework, avg_exams, num_labs) do
     0.2 * avg_labs + 0.3 * avg_homework + 0.2 * midterm + 0.3 * final
+  end
+
+    def lab_count(labs) do
+    labs
+    |> Enum.reject(fn mark -> mark < 0.25 end)
+    |> Enum.count()
+  end
+
+  def lab_avg(labs) do
+    if Enum.count(labs) == 0 do
+      0
+    else
+      Enum.sum(labs) / Enum.count(labs)
+    end
   end
 end
